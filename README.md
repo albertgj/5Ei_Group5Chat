@@ -1,10 +1,8 @@
 # GroupChat
 
-Siamo nullafacenti : ( 
-./
-"La consapevolezza ci incoraggia a vivere " 
-PAULO COELHO
-
+---
+Neid Halp, plis? : ( 
+---
 
 Membri: 
 - Albert Gjergjaj
