@@ -1,6 +1,6 @@
 # GroupChat
 
-Neid Halp, plis? : ( 
+_Neid Halp, plis? : (
 ---
 
 Membri: 
