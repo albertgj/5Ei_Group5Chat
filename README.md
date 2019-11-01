@@ -1,7 +1,5 @@
 # GroupChat
 
-_Neid Halp, plis? : (_
-
 ---
 
 Membri: 
