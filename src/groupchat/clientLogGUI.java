@@ -104,7 +104,7 @@ public class clientLogGUI extends javax.swing.JFrame {
     private void loginChat(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginChat
         // TODO add your handling code here:
         clientChatGUI ccGUI = new clientChatGUI(aliasTxt.getText());
-        ccGUI.show();
+        ccGUI.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_loginChat
 
