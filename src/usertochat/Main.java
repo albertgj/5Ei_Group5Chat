@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package usertouser;
+package usertochat;
 
 /**
  *
- * @author 17659
+ * @author Donzi
  */
 public class Main 
 {
