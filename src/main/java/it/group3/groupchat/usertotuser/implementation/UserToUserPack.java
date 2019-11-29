@@ -1,9 +1,9 @@
 package it.group3.groupchat.usertotuser.implementation;
 
-
 import java.io.*;
 import java.net.*;
 import it.group3.groupchat.usertotuser.service.UserToUserService;
+import java.util.Arrays;
 
 /**
  *
@@ -17,6 +17,51 @@ public class UserToUserPack implements UserToUserService {
 
     public UserToUserPack() throws IOException {
         clientSocket = new Socket("127.0.0.1", 53102);
+    }
+
+    @Override
+    public void registration(String alias, String topic) throws IOException {
+        byte[] regB = new byte[alias.length() + topic.length() + 4];
+        byte[] serverResponse = new byte[100];
+
+        int i = 0;
+        regB[i++] = 10; //opcode
+
+        regB[i++] = 0; //version
+
+        for (byte b : alias.getBytes()) // alias
+        {
+            regB[i++] = b;
+        }
+        regB[i++] = 0;
+
+        for (byte b : topic.getBytes()) //topic
+        {
+            regB[i++] = b;
+        }
+
+        regB[i++] = 0;
+
+        DataOutputStream outputS = new DataOutputStream(clientSocket.getOutputStream());
+        outputS.write(regB);
+
+        System.out.println("Iviata richiesta");
+
+        /* Ricezione pacchetto Ack server
+        *    opcode (20) | id assegnato | conferma alias | ("general") 0
+         */
+        DataInputStream inputS = new DataInputStream(clientSocket.getInputStream());
+        inputS.read(serverResponse);
+        byte opcode = serverResponse[0];
+        switch (opcode) {
+            case 20:
+                String aliasAssegnato = new String(Arrays.copyOfRange(serverResponse, 3, serverResponse.length - 1));
+                System.out.println("Ricevuto Acknowledgement: " + "\nAlias: " + aliasAssegnato);
+                break;
+            case 50:
+                System.out.println("Ricevuto Errore!");
+                break;
+        }
     }
 
     @Override
@@ -42,14 +87,14 @@ public class UserToUserPack implements UserToUserService {
         }
 
         messageSend[index++] = 0;
-        
+
         DataOutputStream ds = new DataOutputStream(clientSocket.getOutputStream());
         ds.write(messageSend);
     }
 
     @Override
     public void receiveMsgFromUser() throws IOException {
-        
+
         DataInputStream di = new DataInputStream(clientSocket.getInputStream());
         di.read(messageRecive);
 

@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public interface UserToUserService 
 {
+    public void registration(String alias, String topic) throws IOException;
     public void sendMsgToUser(String message, String myId, String destId) throws IOException;
     public void receiveMsgFromUser() throws IOException;
     public void disconnect() throws IOException;
