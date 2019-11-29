@@ -14,6 +14,7 @@ public class UserToUserPack implements UserToUserService {
     private byte[] messageSend = new byte[2043];
     private byte[] messageRecive = new byte[2043];
     private static Socket clientSocket;
+    private byte[] idUtente ;
 
     public UserToUserPack() throws IOException {
         clientSocket = new Socket("127.0.0.1", 53102);
@@ -63,6 +64,16 @@ public class UserToUserPack implements UserToUserService {
                 break;
         }
     }
+    
+    public void setId(byte[] id)
+    {
+        this.idUtente = id;
+    }
+    
+    public byte[] getId()
+    {
+        return idUtente;
+    }
 
     @Override
     public void sendMsgToUser(String message, String myId, String destId) throws IOException {
@@ -102,7 +113,22 @@ public class UserToUserPack implements UserToUserService {
     }
 
     @Override
-    public void disconnect() {
+    public void disconnect() throws IOException
+    {
+        byte[] id = getId();
+        byte[] discB = new byte[id.length + 1];
 
+        int i = 0;
+        discB[i++] = 11; //opcode
+
+        for (byte b : id) // id
+        {
+            discB[i++] = b;
+        }
+
+        DataOutputStream outputS = new DataOutputStream(clientSocket.getOutputStream());
+        outputS.write(discB);
+
+        System.out.println("Disconnessione Eseguita");
     }
 }
