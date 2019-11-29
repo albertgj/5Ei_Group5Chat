@@ -1,8 +1,8 @@
-package it.group3.groupchat.usertotuser.implementation;
+package it.group3.groupchat.implementation;
 
 import java.io.*;
 import java.net.*;
-import it.group3.groupchat.usertotuser.service.UserToUserService;
+import it.group3.groupchat.service.UserToUserService;
 import java.util.Arrays;
 
 /**

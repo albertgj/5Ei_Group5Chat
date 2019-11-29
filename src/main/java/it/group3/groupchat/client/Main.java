@@ -1,6 +1,6 @@
-package it.group3.groupchat.usertotuser.client;
+package it.group3.groupchat.client;
 
-import it.group3.groupchat.usertotuser.implementation.UserToUserPack;
+import it.group3.groupchat.implementation.UserToUserPack;
 import java.io.IOException;
 
 /**

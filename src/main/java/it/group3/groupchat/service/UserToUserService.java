@@ -1,4 +1,4 @@
-package it.group3.groupchat.usertotuser.service;
+package it.group3.groupchat.service;
 
 import java.io.IOException;
 
