@@ -79,9 +79,7 @@ public class UserToUserPack implements UserToUserService {
     public void sendMsgToUser(String message, String myId, String destId) throws IOException {
         //Send Message Part
         int index = 0;
-        messageSend[index++] = 0;
-
-        messageSend[index++] = 1;
+        messageSend[index++] = 01;
 
         for (Byte b : myId.getBytes()) {
             messageSend[index++] = b;
