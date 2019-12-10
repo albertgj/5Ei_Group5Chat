@@ -43,7 +43,7 @@ public class clientPackets implements UserToUserService {
         }
 
         regB[i++] = 0;
-
+        
         DataOutputStream outputS = new DataOutputStream(clientSocket.getOutputStream());
         outputS.write(regB);
 
@@ -56,8 +56,18 @@ public class clientPackets implements UserToUserService {
         /* Ricezione pacchetto Ack server
         *    opcode (20) | id assegnato | conferma alias | ("general") 0
         */
-        setId(Arrays.copyOfRange(ack,1,2));
-        String aliasAssegnato = new String(Arrays.copyOfRange(ack, 3, ack.length - 1));
+        setId(Arrays.copyOfRange(ack,1,3));
+        int o= 0;
+        byte[] alias = new byte[getAliasUtente().length()];
+        for (int i = 3; i<ack.length;i++){
+            
+            if(ack[i] == 0)
+            {
+                break;
+            }
+            alias[o++] = ack[i];
+        }
+        String aliasAssegnato = new String(alias);
         setAliasUtente(aliasAssegnato);
         System.out.println("Ricevuto Acknowledgement: " + "Alias: " + aliasAssegnato);
     }
@@ -132,7 +142,26 @@ public class clientPackets implements UserToUserService {
     @Override
     public void receiveMsgFromUser(byte[] userPkt) throws IOException
     {
-        System.out.println(new String(userPkt).trim());
+        int aliasEnd = 0;
+        for (byte b: userPkt){
+            if(b == 0)
+            {
+                break;
+            }
+            aliasEnd++;
+        }
+        
+        int messageEnd = aliasEnd+1;
+        for (int i = messageEnd; i<userPkt.length - aliasEnd;i++){
+            
+            if(userPkt[i] == 0)
+            {
+                break;
+            }
+            messageEnd++;
+        }
+        
+        System.out.println(new String(Arrays.copyOfRange(userPkt,1,aliasEnd)) + ": " + (new String(Arrays.copyOfRange(userPkt,aliasEnd+1,messageEnd))));
     }
     
     @Override
@@ -179,8 +208,7 @@ public class clientPackets implements UserToUserService {
             messageEnd++;
         }
         
-        System.out.println(new String(Arrays.copyOfRange(chatPkt,1,aliasEnd)) + ": ");
-        System.out.println(new String(Arrays.copyOfRange(chatPkt,aliasEnd+1,messageEnd)));
+        System.out.println(new String(Arrays.copyOfRange(chatPkt,1,aliasEnd)) + ": " + (new String(Arrays.copyOfRange(chatPkt,aliasEnd+1,messageEnd))));
     }
 
     @Override
@@ -224,25 +252,26 @@ public class clientPackets implements UserToUserService {
     @Override
     public void changeAlias(String alias) throws IOException
     {
-        byte[] cngB = new byte[3 + getId().length + getAliasUtente().length() + alias.length()];
-    
+        byte[] cngB = new byte[5 + getAliasUtente().length() + alias.length()];
         int i=0;
         cngB[i++] = 18;
         
-        for(byte b: getId())
+        for(byte b: getId()){
             cngB[i++] = b;
-        
-        for(byte b: getAliasUtente().getBytes())
+        }
+        for(byte b: getAliasUtente().getBytes()){
             cngB[i++] = b;
-        
+        }
         cngB[i++] = 0;
         
-        for(byte b: alias.getBytes())
+        for(byte b: alias.getBytes()){
             cngB[i++] = b;
-        
+        }
         cngB[i++] = 0;
         
         setAliasUtente(alias);
+        DataOutputStream ds = new DataOutputStream(clientSocket.getOutputStream());
+        ds.write(cngB);
     }
     
     public String getAliasUtente() {
