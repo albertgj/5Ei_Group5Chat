@@ -48,9 +48,12 @@ public class Main
         Thread listener = new lThread(cp);
         listener.start();
         
-        cp.registration("Jogororo", "general");
-        Thread.sleep(5000);
-        cp.sendMsgToChat("Ciao a tutti");
+        cp.registration("SamPorter", "general");
+        Thread.sleep(2000);
+        cp.sendMsgToChat("Sas Ses Sus");
+        cp.changeAlias("SamBridges");
+        Thread.sleep(2000);
+        cp.sendMsgToChat("Toth asiatico");
         
     }
 }
