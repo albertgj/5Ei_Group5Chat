@@ -77,7 +77,7 @@ public class packetListener {
     
     public void listening(clientPackets clientP) throws IOException{
         
-        byte[] response = new byte[100]; 
+        byte[] response = new byte[2048]; 
         Socket cs = clientPackets.getClientSocket();
         DataInputStream inputS = new DataInputStream(cs.getInputStream());
             
