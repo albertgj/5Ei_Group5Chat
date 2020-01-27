@@ -1,56 +1,18 @@
-# Group 5 Chat Project
+# Chat Project
 
-### Table of contents
-1. **INTRODUCTION**</br>
-&emsp; 1.1 - **Overview** </br>
-&emsp; 1.2 - **Goals and Objectives**</br>
-&emsp; 1.3 - **Scope**</br>
-&emsp; 1.4 - **Definitions**</br> 
-&emsp; 1.5 - **Assumptions**</br> 
-2. **GENERAL DESIGN CONSTRAINTS** </br>
-&emsp; 2.1 - **Product Environment**</br>
-&emsp; 2.2 - **User Characteristics**</br>
-&emsp; 2.3 - **Mandated Constraints**</br>
-&emsp; 2.4 - **Potential System Evolution**</br> 
-3. **NONFUNCTIONAL REQUIREMENTS** </br>
-&emsp; 3.1 - **Operational Requirements**</br>
-&emsp; 3.2 - **Performance Requirements**</br>
-&emsp; 3.3 - **Security Requirements**</br>
-&emsp; 3.4 - **Safety Requirements**</br> 
-&emsp; 3.5 - **Legal Requirements**</br> 
-&emsp; 3.6 - **Other Quality Attributes**</br>
-&emsp; 3.7 - **Documentation and Training**</br>
-&emsp; 3.8 - **External Interface**</br> 
-&emsp;&emsp; 3.8.1 - User Interface</br>  
-4. **SYSTEM FEATURES** </br>
-&emsp; 4.1 - **Feature: Youth Database** </br>
-&emsp;&emsp; 4.1.1 - Description and Priority</br>
-&emsp;&emsp; 4.1.2 - Use-case: New Registrant</br>
-&emsp;&emsp; 4.1.3 - Additional Requirements</br>
-&emsp; 4.2 - **Feature: Youth Tracking**</br>
-&emsp;&emsp; 4.2.1 - Description and Priority</br>
-&emsp;&emsp; 4.2.2 - Use Case: Youth Login</br>
-&emsp;&emsp; 4.2.3 - Additional Requirements</br>
-&emsp;&emsp; 4.2.4 - Description and Priority</br>
-&emsp;&emsp; 4.2.5 - Use-case: Youth Logout</br>
-&emsp;&emsp; 4.2.6 - Additional Requirements</br>
-&emsp;&emsp; 4.2.7 - Description and Priority</br>
-&emsp;&emsp; 4.2.8 - Use-case: Administrator comments</br>
-&emsp;&emsp; 4.2.9 - Additional Requirements</br>
-&emsp; 4.4 - **Feature: Database Search**</br>
-&emsp;&emsp; 4.4.1 - Description and Priority </br>
-___
-**Authors** – Quintarelli Federico, Gjergjaj Albert, Castellano Pietro, Donisan Ion Cristian, Scardoni Francesco
-___
+
+## Authors 
+Quintarelli Federico, Gjergjaj Albert, Castellano Pietro, Donisan Ion Cristian, Scardoni Francesco
+
 ## 1 Introduction 
 
-1.1 **Overview**
+### 1.1 Overview
 
 This document defines the requirements for the Chat Protocol Project (CPP) which has been developed since 8 october until 13 december 2019 as a school project, which purpose, in addition to the chat itself, was to increase our development and team-collaboration skills. 
 This document is designed to be beneficial to both the user/teacher as well as the development team. From this document the user/teacher will be able to determine our understanding of the requirements and verify their accuracy.
 The CPP should be a program which permits you to chat with other users after connecting to the main server, which controls the data streams between users as well as other various functionalities. The system must be easy to use
 ___
-1.2 **Goals and Objectives**
+### 1.2 Goals and Objectives
 
 CPP Goals:
 1. Develop the program so that it can be maintainable and updatable easly in case of problems or future requests
