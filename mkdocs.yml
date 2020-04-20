@@ -2,7 +2,7 @@ site_name: 2020_5eI_Team5
 nav:
     - 'Project Charter': 'Project charter.md'
     - 'Software Requirements Specification': 'Software Requirements Specification.md'
-    - 'Software Project Management plan': 'Software_project_management_plan.pdf'
+    - 'Software Project Management Plan': 'Software Project Management Plan.md'
     - 'Business Model Canvas': 'business_model_canvas.pdf'
     - 'Project Model Canvas': 'Project_Model_Canvas.pdf'
     - 'Architecture, Design and Coding Standards': 'Architecture, Design and Coding Standards.md'
