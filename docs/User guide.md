@@ -47,6 +47,7 @@ ___
 ## Launching the application
 
 After the application starts you will see the login screen.
+
 ![Login page](IMMAGINI/login.jpg)
 
 1. Here you will put the alias and the topic of the chat.
