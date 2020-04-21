@@ -67,7 +67,7 @@ If the login is succsesful you will see the general chat room.
 
 ___
 ## Using the private room
-After clicking on a the user on the list, a new tab will appear with the name of the user that you clicked.
+After clicking on a user in the list, a new tab will appear with the name of the user that you clicked.
 
 ![](IMMAGINI/private%20chat.png)
 
