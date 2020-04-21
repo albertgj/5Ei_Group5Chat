@@ -55,7 +55,7 @@ After the application starts you will see the login screen.
 
 ___
 ## Using the General Room
-If the login is succsesful you will see the general chat room.
+If the login is successful you will see the general chat room.
 
 ![](IMMAGINI/general%20room.png)
 
