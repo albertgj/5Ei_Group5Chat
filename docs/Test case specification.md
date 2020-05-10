@@ -1,52 +1,63 @@
-# Test Case Specification
-
-# For
-
-# Team 5
+# Test Case Specification For Team 5
 
 April 17, 2020
 
-Prepared by:
 
-Francesco Scardoni
+# Table of Contents
+- [Revision History](#revision-history)
+- [1 Introduction](#1-introduction)
+- [2 Test Cases: Windows Application](#2-test-cases-windows-application)
 
-# **Table of Contents**
 
-**1 Introduction 4**
-
-**2 GDPR: Presentation**
-
-Revision History
+# Revision History
 
 | **Version** | **Date** | **Name** | **Description** |
 | --- | --- | --- | --- |
-| First | 04/03/2020 | Gjerjaj Albert | Under the supervision of our group leader (Gjerkaj Albert) we begin to plan and initiate a presentation on the GDPR. |
-| Last | 20/03/2020 | Gjerjaj Albert | This latest version consists of a 20-minute video presentation about the GDPR. |
+| First | 04/03/2020 | Gjergjaj Albert | Initial Document |
+| Last | 20/03/2020 | Gjergjaj Albert | Updated test case numbers |
 
-# 1Introduction
+# 1 Introduction
 
-At the request of our prof. Cobello our team has studied and memorized the most important features and articles of the GDPR, exposing them as a video presentation.
+This document provides the test cases made by team 5. Each item to be tested is represented by an individual test case.  Each case details the input and expected outputs.
 
-# 2Test Cases: iOS Application
-
-| Test ID | 1.0 |
-| --- | --- |
-| Title | Google Presentation about GDPR |
-| Feature | Google Presentation by GOOGLE |
-| Objective | Create a presentation about GDPR that will be the basis of the video-presentation. |
-| Setup | Every member of the team has a PC and work at home. |
-| Test Data | 12/03/2020 |
-| Test Actions | Try if presentation work and save it. |
-| Expected Results | Have a good presentation for start recording the video presentation |
-
-# 3Test Cases: iOS Application
+# 2 Test Cases: Windows Application
 
 | Test ID | 2.0 |
 | --- | --- |
-| Title | Video Presentation |
-| Feature | Sony Vegas PRO |
-| Objective | Create a video with the the google presentation as basis where the team members (recorded) speak on the presentation. |
-| Setup | Every member our part of presentation registered to a meber that create the final video. |
-| Test Data | 18/03/2020 |
-| Test Actions | See the final video e decide if use it or remake it. |
-| Expected Results | Finish the video-presentation. |
+| Title | Correct login |
+| Feature | Login into the Potato Chat Client with random username and general topic for general chat room |
+| Objective | Confirm that with a valid nickname and a valid topic a user can access the Potato Chat Client|
+| Setup     | Computer with jdk 1.8 and windows installed.
+| Test Data | Login information -> Nickname: general and Chat Topic: general |
+| Test Actions | Open NetBeans and Clean and Build the application. Then run the app and insert login information |
+| Expected Results | The system displays the general chat room |
+___
+| Test ID | 2.1 |
+| --- | --- |
+| Title | Invalid nickname |
+| Feature | Login into the Potato Chat Client |
+| Objective | Confirm that with a invalid nickname, which means a nickname that has already been taken by someone else, and a valid topic a user can't access the Potato Chat Client|
+| Setup     | Computer with jdk 1.8 and windows installed.
+| Test Data | Login information -> Already Taken Nickname: test and Chat Topic: general |
+| Test Actions | Open NetBeans and Clean and Build the application. Then run the app and insert the invalid nickname |
+| Expected Results | The system displays an error message and doesn't enter the general chat room |
+___
+| Test ID | 3.0 |
+| --- | --- |
+| Title | General Chat Room |
+| Feature | Chat with other users in a general chat room |
+| Objective | Confirm that with valid login information users can access and write messages in the general chat room|
+| Setup     | Computer with jdk 1.8 and windows installed.
+| Test Data |  |
+| Test Actions | Open NetBeans and Clean and Build the application. Then run the app and start writing messages |
+| Expected Results | The system sends correctly messages to the general chat room and receives them |
+___
+| Test ID | 3.1 |
+| --- | --- |
+| Title | Private Chat Room |
+| Feature | Chat privately with another user |
+| Objective | Confirm that a user, after having logged in the general chat room, can write messages with another user in a private room |
+| Setup     | Computer with jdk 1.8 and windows installed.
+| Test Data |  |
+| Test Actions | Open NetBeans and Clean and Build the application. Then run the app and click on a user that is connected to the general chat room and start writing private messages |
+| Expected Results | The system sends and receives correctly private messages |
