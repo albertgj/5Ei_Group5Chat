@@ -2,7 +2,6 @@
 
 April 17, 2020
 
-
 # Table of Contents
 - [Revision History](#revision-history)
 - [1 Introduction](#1-introduction)
