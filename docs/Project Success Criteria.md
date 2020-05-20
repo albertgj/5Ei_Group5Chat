@@ -1,7 +1,10 @@
 
 # Success Criteria for Potato Chat Client Project
 
-**The Potato Chat Client project will be considered a success if   .   .    .**
+### The Potato Chat Client project will be considered a success if   .   .    .
+
+**A fully functional test system is delivered on or before December 6th.**
+
 The system shall be deployed in a state that is ready to be used for its intended purpose. The users shall be given the training they need in order to begin using the system. We will consider both of these goals met if the users who plan to use the system during its test period fill out the attached Acceptance Test User Survey and:
 - No one circles “No” on the first two questions
 - If anyone circles “Yes, with reservations” on the first two questions, these reservations shall be resolved prior to April 20th to the satisfaction of the users with the reservations.
